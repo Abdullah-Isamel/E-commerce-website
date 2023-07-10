@@ -1,0 +1,376 @@
+/* Start CSS variable */
+:root {
+  --main-background: #e3e6f3;
+  --main-color: #27807b;
+  --font-color: #1a1a1a;
+  --main-transition: 0.2s;
+}
+/* End CSS variable */
+
+/* Start global rule */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "League Spartan", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--blue-color);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #e3e6f3;
+}
+/* End global rule */
+
+/* Start header */
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e3e6f3;
+  position: sticky;
+  z-index: 999;
+  width: 100%;
+  left: 0;
+  top: 0;
+  box-shadow: 0 5px 15px rgb(0, 0, 0, 0.06);
+  padding: 20px 80px;
+}
+
+#header .links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#header .links li a {
+  color: var(--font-color);
+  font-size: 15px;
+  display: block;
+  font-weight: 500;
+  padding: 10px 0;
+  margin-right: 20px;
+  transition: var(--main-transition);
+  position: relative;
+}
+
+#header .links li a::before {
+  content: "";
+  position: absolute;
+  background-color: var(--main-color);
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  transition: var(--main-transition);
+}
+
+#header .links li a:hover::before,
+#header .links li a.active::before {
+  width: 50%;
+}
+
+#header .links li a:hover,
+#header .links li a.active,
+#header i:hover {
+  color: var(--main-color);
+}
+
+#header i {
+  font-weight: 700;
+  color: var(--font-color);
+  transition: var(--main-transition);
+}
+
+@media (min-width: 768px) {
+  #header .mobile-list {
+    display: none;
+  }
+}
+/* End header */
+/* Start hero */
+#hero {
+  height: calc(100vh - 86.39px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  gap: 20px;
+}
+
+#hero .content h4 {
+  font-size: 17px;
+  margin: 0 0 10px;
+  color: var(--font-color);
+}
+
+#hero .content h2 {
+  font-size: 33px;
+  margin: 0 0 10px;
+  color: var(--font-color);
+}
+
+#hero .content h1 {
+  font-size: 35px;
+  margin: 0 0 15px;
+  color: var(--main-color);
+}
+
+#hero .content p {
+  color: #777;
+  font-weight: 500;
+}
+
+#hero .content button {
+  border: 0;
+  color: var(--main-color);
+  font-weight: 700;
+  font-size: 15px;
+  background-image: url(../imgs/button.png);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  padding: 14px 80px 14px 65px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+#hero .image img {
+  max-width: 100%;
+}
+/* End hero */
+/* Start feature */
+#feature {
+  padding: 40px 80px;
+}
+
+#feature .info {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  gap: 20px;
+}
+
+#feature .info .box {
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #c7cfed;
+  border-radius: 6px;
+  background-color: white;
+  box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+}
+
+#feature .info .box:hover {
+  box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.1);
+}
+
+#feature .info .box img {
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+#feature .info .box .title {
+  padding: 4px 8px;
+  background-color: #e3e6f3;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #777;
+  display: block;
+  width: fit-content;
+  margin: auto;
+  cursor: pointer;
+}
+
+.prod-section {
+  padding: 60px;
+}
+
+.prod-section .head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.prod-section .head h2 {
+  font-size: 40px;
+  margin: 0 0 10px;
+  color: var(--font-color);
+}
+
+.prod-section .head p {
+  color: #777;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.prod-section .products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.prod-section .product {
+  padding: 15px;
+  background-color: inherit;
+  border: 1px solid #c7cfed;
+  border-radius: 20px;
+}
+
+.prod-section .product .image {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.prod-section .product .image img {
+  max-width: 100%;
+  margin-bottom: -5px;
+  transition: var(--main-transition);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.prod-section .product .image:hover img {
+  transform: scale(1.1) rotate(3deg);
+}
+
+.prod-section .product .prod-info {
+  padding-top: 10px;
+}
+
+.prod-section .product .prod-info > span {
+  font-size: 15px;
+  font-weight: 500;
+  color: #777;
+  display: block;
+}
+
+.prod-section .product h4 {
+  color: var(--font-color);
+  font-size: 17px;
+  margin: 5px 0;
+}
+
+.prod-section .product .stars {
+  margin-bottom: 10px;
+}
+
+.prod-section .product .stars i {
+  color: #ffb100;
+}
+
+.prod-section .product .price {
+  color: var(--main-color);
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prod-section .product .price i {
+  font-weight: 600;
+  color: var(--main-color);
+  background-color: #27807b38;
+  border-radius: 50%;
+  padding: 6px;
+  transition: var(--main-transition);
+  cursor: pointer;
+}
+
+.prod-section .product .price i:hover {
+  color: white;
+  background-color: rgb(39, 128, 123, 0.7);
+}
+/* End feature */
+/* Start services */
+#services {
+  background-image: url(../imgs/banner/b2.jpg);
+  background-size: cover;
+  position: relative;
+  padding: 40px 0;
+  text-align: center;
+}
+
+#services::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.2);
+}
+
+#services > div {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+#services div > span {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#services div > p {
+  margin: 10px 0;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+#services div > p > span {
+  color: red;
+}
+
+#services div > button {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 15px;
+  border: 0;
+  border-radius: 2px;
+  transition: var(--main-transition);
+  cursor: pointer;
+}
+
+#services div > button:hover {
+  color: white;
+  background-color: var(--main-color);
+}
+
+/* End services */
+section.prod-section {
+  padding: 40px 140px;
+}
+
+section {
+  padding: 20px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
